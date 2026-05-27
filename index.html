@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rinconcito | Portal</title>
+    <meta name="description" content="Guía cultural del Área Metropolitana de Guadalajara.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon redondo dinámico -->
+    <link id="favicon" rel="icon" type="image/png" href="assets/Logo_Rinconcito.jpg">
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const img = new Image();
+            img.src = 'assets/Logo_Rinconcito.jpg';
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                const size = 128; // Resolución premium para el favicon
+                canvas.width = size;
+                canvas.height = size;
+                const ctx = canvas.getContext('2d');
+                
+                // Crear máscara circular
+                ctx.beginPath();
+                ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+                ctx.clip();
+                
+                // Dibujar la imagen recortada
+                ctx.drawImage(img, 0, 0, size, size);
+                
+                // Asignar el canvas como favicon
+                document.getElementById('favicon').href = canvas.toDataURL('image/png');
+            };
+        });
+    </script>
+</head>
+<body>
+    <!-- Decorative background elements -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <main class="glass-container">
+        <header class="profile-section">
+            <div class="avatar-wrapper">
+                <img src="assets/Logo_Rinconcito.jpg" alt="Rinconcito Logo" class="profile-avatar">
+            </div>
+            <h1 class="profile-title">Rinconcito</h1>
+            <p class="profile-subtitle">Guía cultural del Área Metropolitana de Guadalajara</p>
+        </header>
+
+        <nav class="links-section">
+            <a href="https://heyzine.com/flip-book/f11541615c.html" target="_blank" rel="noopener noreferrer" class="glass-btn">
+                <span class="btn-text">Guía Interactiva</span>
+            </a>
+            
+            <a href="https://drive.google.com/drive/u/1/folders/1Oa1TFiuWYyn5d0rgCkD47aiPWplKmSXr" target="_blank" rel="noopener noreferrer" class="glass-btn">
+                <span class="btn-text">Descargar Guía (PDF)</span>
+            </a>
+            
+            <a href="#" target="_blank" rel="noopener noreferrer" class="glass-btn">
+                <span class="btn-text">Comparte tu experiencia / Llena tu bitácora</span>
+            </a>
+        </nav>
+
+        <footer class="social-section">
+            <a href="https://www.instagram.com/rinconcitogdl/?hl=es" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+        </footer>
+    </main>
+</body>
+</html>
